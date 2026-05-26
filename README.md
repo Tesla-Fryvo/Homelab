@@ -34,7 +34,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 * **HP ProOne 400 G1:** Intel Core i5-4570T | 12GB RAM | 250GB SATA SSD | Intel HD Graphics 4600
 * **Fujitsu Lifebook AH531:** Intel Core i5-2410M | 12GB RAM | 700GB HDD | Intel HD Graphics 3000
 
-### 🧪 The Raspberry Pi Sandbox (Testing Ground Cluster)
+### 🧪 Raspberry Pi Testing Cluster
 *A dedicated 3-node physical cluster running Ubuntu Server Lite. It utilizes Docker Swarm and Kubernetes (K8s) frameworks purely for testing network scaling, Pi-hole redundancy, and Tailscale endpoints.*
 
 * 1x Raspberry Pi 4 Model B (8GB RAM)
