@@ -1,8 +1,8 @@
-# 🏠 Personal Homelab Infrastructure & Cluster Tracker
+# 🏠 MY Personal Homelab Infrastructure
 
-Welcome to my homelab repository. This space serves as the blueprint, hardware documentation, and tracking archive for my self-hosted home server network and testing clusters. 
+Welcome to my homelab repository. This space serves as the blueprint, hardware documentation, and tracking archive for my home server network and testing clusters. 
 
-I build and maintain this setup to host independent services, manage my own data securely, and experiment with backend infrastructure.
+I build and maintain this setup.
 
 ---
 
