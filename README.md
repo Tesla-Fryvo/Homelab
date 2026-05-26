@@ -6,9 +6,9 @@ I build and maintain this setup.
 
 ---
 
-## 📅 Project Timeline & Milestone Logs
+## 📅 Project Timeline
 
-| Date | Phase | Focus & Milestones |
+| Date | Phase | info |
 | :--- | :--- | :--- |
 | **Dec 21, 2025** | Planning | Research phase. Spent most of the time sourcing and acquiring hardware components. |
 | **Dec 24, 2025** | Network Setup | Sourced network hardware; started mapping and building the local network structure. |
@@ -17,10 +17,10 @@ I build and maintain this setup.
 
 ---
 
-## 🛠️ Compute Hardware Architecture
+## 🛠️ Compute Hardware
 
-### 🛡️ The Main Production Node (Main Server)
-*This is the core workforce engine running my primary virtualized environments. It is built inside an open-frame case.*
+### Main Node (Main Server)
+*This is the main server.*
 
 * **CPU:** AMD Ryzen 5 5600G
 * **Motherboard:** MSI B450-A Pro Max
@@ -30,8 +30,8 @@ I build and maintain this setup.
 * **Chassis:** Open Frame Case
 * **Primary OS Layer:** Proxmox VE (Hypervisor)
 
-### 📈 Proxmox Cluster Backup Nodes
-*These secondary machines are integrated into the environment primarily for failover clusters and automated TrueNAS storage backups.*
+### Proxmox Cluster Backup Nodes
+*These are backup clusters and automated TrueNAS storage backups.*
 
 * **HP ProOne 400 G1:** Intel Core i5-4570T | 12GB RAM | 250GB SATA SSD | Intel HD Graphics 4600
 * **Fujitsu Lifebook AH531:** Intel Core i5-2410M | 12GB RAM | 700GB HDD | Intel HD Graphics 3000
@@ -46,22 +46,22 @@ I build and maintain this setup.
 
 ## 🌐 Networking Hardware
 
-* **Core Router:** TP-Link 300Mbps Multi-Mode Wi-Fi Router (`TL-WR844N`)
-* **Switching Layer:** Mercusys 8-Port Gigabit Desktop Switch (`MS108G`)
-* **ISP Gateway:** Huawei OptiXstar `EG8145X6-10` *(Configured to bridge mode; has no active use inside the core network)*
+* **main Router:** TP-Link 300Mbps Multi-Mode Wi-Fi Router (`TL-WR844N`)
+* **Switching hub:** Mercusys 8-Port Gigabit Desktop Switch (`MS108G`)
+* **ISP router:** Huawei OptiXstar `EG8145X6-10` *(Configured to bridge mode; has no active use inside the core network)*
 
 ---
 
-## ⚙️ Service & Software Ecosystem
+## ⚙️ Service & Software i use 
 
 ### 🌐 Cloud & Tunneling Services (External Connections)
-* **Playit.gg:** Premium tunneling service used for seamless server port-forwarding without exposing home public IPs.
-* **Cloudflare:** Primary Domain Management, Cloudflare Tunnels, and web application hosting via Cloudflare Pages.
-* **Tailscale:** Private Mesh VPN layer used for secure, encrypted remote access to the homelab from any outside device.
-* **GitHub / GitLab:** Source control, logic archiving, and workflow pipelines.
+* **Playit.gg:** Premium tunneling service used for server port-forwarding without exposing home public IPs.
+* **Cloudflare:** Domain Management, Cloudflare Tunnels, Cloudflare Pages.
+* **Tailscale:** Private VPN layer used for remote access to the homelab from any outside network.
+* **GitHub / GitLab:** Source archiving.
 
 ### 🐳 Application Architecture & Running Configurations
-*The main server runs Proxmox VE. All core services run inside an **Ubuntu Server VM**, handled via isolated Docker containers and supervised through Portainer.*
+*The main server runs Proxmox VE. All services run inside an **Ubuntu Server VM**, Docker containers and Portainer.*
 
 | Software / Platform | Purpose within the Environment |
 | :--- | :--- |
@@ -77,15 +77,15 @@ I build and maintain this setup.
 
 ---
 
-## 📁 GitHub Project Directory Layout
+## 📁 GitHub Project Layout
 
 ```text
-├── Project-picture/         # Visual media directory
-│   ├── setup-pic/           # Screenshots and operational captures taken during active setup
-│   └── hardware-pic/        # Physical pictures of the servers, components, and frame layout
+├── Project-picture/         # media directory
+│   ├── setup-pic/           # Screenshots and pic taken during active setup
+│   └── hardware-pic/        # Physical pictures of the servers, components, and layout
 │
 ├── Running-service/         # Infrastructure configuration vault
-│   ├── website/             # Source files for my personal self-hosted websites
-│   └── [Dockerfiles/Stacks] # Standard compose files, environment variables, and stack configurations
+│   ├── website/             # Source files for my websites
+│   └── [Dockerfiles]        # Standard compose files, environment variables, and stack configurations
 │
-└── README.md                # Core documentation index
+└── README.md                # documentation index
