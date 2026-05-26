@@ -1,4 +1,4 @@
-# 🏠 MY Personal Homelab Infrastructure
+# 🏠 My Homelab 
 
 Welcome to my homelab repository. hardware documentation, and archive for my home server network and testing clusters. 
 
