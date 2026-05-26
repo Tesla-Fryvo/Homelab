@@ -1,8 +1,6 @@
 # 🏠 MY Personal Homelab Infrastructure
 
-Welcome to my homelab repository. This space serves as the blueprint, hardware documentation, and tracking archive for my home server network and testing clusters. 
-
-I build and maintain this setup.
+Welcome to my homelab repository. hardware documentation, and archive for my home server network and testing clusters. 
 
 ---
 
@@ -10,10 +8,10 @@ I build and maintain this setup.
 
 | Date | Phase | info |
 | :--- | :--- | :--- |
-| **Dec 21, 2025** | Planning | Research phase. Spent most of the time sourcing and acquiring hardware components. |
-| **Dec 24, 2025** | Network Setup | Sourced network hardware; started mapping and building the local network structure. |
-| **Apr 09, 2026** | Core Assembly | All hardware arrived. Started physical assembly of the main server and secondary nodes. |
-| **May 26, 2026** | Documentation | Current Phase. Starting full system tracking and mapping out the repository documentation. |
+| **Dec 21, 2025** | Planning | Spent most of the time geting my hand on hardware. |
+| **Dec 24, 2025** | Network Setup | network hardware; started building local network structure. |
+| **Apr 09, 2026** | Main Setup | All hardware arrived. Started building main server and secondary nodes. |
+| **May 26, 2026** | Documentation | Current Phase. mapping out the repository documentation. |
 
 ---
 
@@ -54,7 +52,7 @@ I build and maintain this setup.
 
 ## ⚙️ Service & Software i use 
 
-### 🌐 Cloud & Tunneling Services (External Connections)
+###  Cloud & Tunneling Services (External Connections)
 * **Playit.gg:** Premium tunneling service used for server port-forwarding without exposing home public IPs.
 * **Cloudflare:** Domain Management, Cloudflare Tunnels, Cloudflare Pages.
 * **Tailscale:** Private VPN layer used for remote access to the homelab from any outside network.
@@ -63,17 +61,21 @@ I build and maintain this setup.
 ### 🐳 Application Architecture & Running Configurations
 *The main server runs Proxmox VE. All services run inside an **Ubuntu Server VM**, Docker containers and Portainer.*
 
-| Software / Platform | Purpose within the Environment |
+| Software / Platform | info |
 | :--- | :--- |
-| **AMP Panel (CubeCoders)** | Full-stack Minecraft server administration (Velocity networks, proxy balancing, MySQL backend databases). |
-| **Docker & Portainer** | Containerized deployment runtime and visual web UI cluster management dashboard. |
-| **Docker Swarm & K8s** | Container orchestration platforms utilized heavily across the Pi testing cluster. |
-| **Coolify** | Open-source PaaS used for rapid self-hosted web deployments and database spin-ups. |
-| **TrueNAS Core** | Dedicated network-attached storage configuration for system backup points. |
-| **Ollama & Open WebUI** | Local, private AI language model deployment interface. |
-| **Pi-hole** | Network-wide local DNS management and tracking domain sinkholes. |
-| **Jellyfin & qBittorrent** | Media management system paired with an automated client for local media staging. |
-| **aaPanel** | Standalone server engine utilized exclusively for a self-hosted local email configuration. |
+| **AMP Panel (CubeCoders)** | Full-stack Minecraft server (Velocity networks, MySQL backend databases). |
+| **Docker & Portainer** | Container deployment and visual web UI dashboard. |
+| **Docker Swarm & K8s** | Container for Pi testing cluster. |
+| **Coolify** | Open-source self-hosted web deployments and databass. |
+| **TrueNAS Core** | network-attached storage for system backup points. |
+| **Ollama & Open WebUI** | Local, private AI language model and interface. |
+| **Pi-hole** | Network-local DNS management and tracking domain. |
+| **Jellyfin & qBittorrent** | Media server system. |
+| **aaPanel** | server engine for a self-hosted local email server. |
+
+---
+### Disclaimer & Credits
+I did not write some of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is personal archive and portfolio
 
 ---
 
@@ -89,3 +91,4 @@ I build and maintain this setup.
 │   └── [Dockerfiles]        # Standard compose files, environment variables, and stack configurations
 │
 └── README.md                # documentation index
+
