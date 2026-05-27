@@ -63,21 +63,21 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 * **main Router:** TP-Link 300Mbps Multi-Mode Wi-Fi Router (`TL-WR844N`)
 * **Switching hub:** Mercusys 8-Port Gigabit Desktop Switch (`MS108G`)
-* **ISP router:** Huawei OptiXstar `EG8145X6-10` *(Configured to bridge mode; has no active use inside the core network)*
+* **ISP router:** Huawei OptiXstar `EG8145X6-10` *(isp router)*
 
 ---
 
 ## ⚙️ Service & Software i use 
 
 ###  Cloud & Tunneling (External Connections)
-* **Playit.gg:** Premium tunneling service used for server port-forwarding without exposing home public IPs.
+* **Playit.gg:** Premium tunneling service used for server port-forwarding.
 * **Cloudflare:** Domain Management, Cloudflare Tunnels, Cloudflare Pages.
 * **Tailscale:** Private VPN layer used for remote access to the homelab from any outside network.
 * **GitHub / GitLab:** Source , archiving.
 
 | Software / Platform | info |
 | :--- | :--- |
-| **AMP Panel (CubeCoders)** | Full-stack Minecraft server (Velocity networks, MySQL backend databases). |
+| **AMP Panel (CubeCoders)** | Full-stack Minecraft server (Velocity networks, MySQL databases). |
 | **Docker & Portainer** | Container deployment and visual web UI dashboard. |
 | **Docker Swarm & K8s** | Container for Pi testing cluster. |
 | **Coolify** | Open-source self-hosted web deployments and databass. |
@@ -85,7 +85,7 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 | **Ollama & Open WebUI** | Local, private AI language model and interface. |
 | **Pi-hole** | Network-local DNS management and tracking domain. |
 | **Jellyfin & qBittorrent** | Media server system. |
-| **aaPanel** | server engine for a self-hosted local email server. |
+| **aaPanel** | server engine for a self-hosted email server. |
 
 
 ---
@@ -121,17 +121,17 @@ Welcome to my homelab repository this is hardware documentation, and archive for
   * 📦 AMP Panel
   * 📦 Playit.gg Connector
   * 📦 Mango SMP Proxy
-  * 📦 MySQL Database *(LuckPerms configuration sync)*
+  * 📦 MySQL Database *(LuckPerms config sync)*
 * ── **Ubuntu Server VM 101 (`10.0.0.105`)**
-  * 📦 Docker / Portainer Core
-  * 📦 Coolify Deployment Engine
+  * 📦 Docker / Portainer
+  * 📦 Coolify Deployment 
   * 📦 Ollama Engine + Open WebUI
 * ── **Ubuntu Server VM 102 (`10.0.0.106`)**
-  * 📦 Docker / Portainer Testing Environment
+  * 📦 Docker / Portainer Testing VM
 * ── **TrueNAS VM 103**
-  * 📦 Local NAS Storage
+  * 📦 NAS Storage
 
-#### **Backup Nodes (Emergency backup)**
+#### **Backup Nodes (backup)**
 * **Proxmox Fujitsu Lifebook**
 * **Proxmox HP ProOne**
 
@@ -155,14 +155,14 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 ```text
 ├── Project-picture/         # media directory
-│   ├── setup-pic/           # Screenshots and pic taken during active setup
+│   ├── setup-pic/           # Screenshots and pic taken during setup
 │   └── hardware-pic/        # Physical pictures of the servers, components, and layout
 │
-├── Running-service/         # Infrastructure configuration vault
+├── Running-service/         # Infrastructure configuration
 │   ├── website/             # Source files for my websites
 │   └── [Dockerfiles]        # Standard compose files, environment variables, and stack configurations
 │
-└── README.md                # documentation index
+└── README.md                # index
 ```
 
 ---
