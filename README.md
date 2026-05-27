@@ -13,6 +13,26 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 | **Apr 09, 2026** | Main Setup | All hardware arrived. Started building main server and secondary nodes. |
 | **May 26, 2026** | Documentation | Current Phase. mapping out the repository documentation. |
 
+## 🚀 Future Goals
+
+### 🌐 Networking
+* Install a **10GB SFP+ card** in the Ryzen server for direct high-speed connections.
+* Upgrade to a new, fully managed core network switch.
+* Deploy a dedicated Mini PC running **OPNsense** or **pfSense** as the main firewall.
+
+### 💻 Compute & Clustering
+* Build a **second Ryzen server node** to expand processing power.
+* Re-architect the Proxmox cluster into a robust, high-availability configuration:
+  > * Ryzen Server 1 *(Completed)*
+  > * Ryzen Server 2 *(Planned)*
+  > * Mini PC Node 1 *(Planned)*
+  > * Mini PC Node 2 *(Planned)*
+* Transition to a dedicated physical **TrueNAS server** build.
+* Expand bare-metal KVM testing.
+* Equip the Ryzen server with a **dedicated GPU** to accelerate local **Ollama** AI workloads.
+
+
+
 ---
 
 ## 🛠️ Compute Hardware
@@ -34,8 +54,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 * **HP ProOne 400 G1:** Intel Core i5-4570T | 12GB RAM | 250GB SATA SSD | Intel HD Graphics 4600
 * **Fujitsu Lifebook AH531:** Intel Core i5-2410M | 12GB RAM | 700GB HDD | Intel HD Graphics 3000
 
-### 🧪 Raspberry Pi Testing Cluster
-*A dedicated 3-node physical cluster running Ubuntu Server Lite. It utilizes Docker Swarm and Kubernetes (K8s) frameworks purely for testing network scaling, Pi-hole redundancy, and Tailscale endpoints.*
+### Raspberry Pi Testing Cluster
 
 * 1x Raspberry Pi 4 Model B (8GB RAM)
 * 2x Raspberry Pi 4 Model B (4GB RAM)
@@ -73,9 +92,64 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 | **Jellyfin & qBittorrent** | Media server system. |
 | **aaPanel** | server engine for a self-hosted local email server. |
 
+
 ---
-### Disclaimer & Credits
-I did not write some of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is personal archive and portfolio
+
+### Network Diagram
+```text
+┌──────────────────────────────┐
+│  Huawei OptiXstar (Bridge)   │  [ISP Input]
+└──────────────┬───────────────┘
+               │ (RJ45 Ethernet)
+ ┌─────────────▼─────────────┐
+ │    TP-Link TL-WR844N      │  [Core Router]
+ └─────────────┬─────────────┘
+               │
+ ┌─────────────▼─────────────┐
+ │    Mercusys MS108G        │  [8-Port Gigabit Switch]
+ └─┬──────┬──────┬──────┬────┘
+   │      │      │      │
+   │      │      │      └─► [3x Raspberry Pi Testing Cluster]
+   │      │      └────────► [Fujitsu Lifebook Backup Node]
+   │      └───────────────► [HP ProOne Backup Node]
+   └──────────────────────► [Proxmox Ryzen Main Server]
+
+## 🖥️ Hypervisor Layout & Cluster Configurations
+
+### 1. Proxmox 3-Node Cluster (Main Stack - 24/7 Production)
+
+#### **Proxmox Ryzen Server (`10.0.0.103`)**
+* ── **Ubuntu Server VM 100 (`10.0.0.104`)**
+  * 📦 AMP Panel
+  * 📦 Playit.gg Connector
+  * 📦 Mango SMP Proxy
+  * 📦 MySQL Database *(LuckPerms configuration sync)*
+* ── **Ubuntu Server VM 101 (`10.0.0.105`)**
+  * 📦 Docker / Portainer Core
+  * 📦 Coolify Deployment Engine
+  * 📦 Ollama Engine + Open WebUI
+* ── **Ubuntu Server VM 102 (`10.0.0.106`)**
+  * 📦 Docker / Portainer Testing Environment
+* ── **TrueNAS VM 103**
+  * 📦 Local NAS Storage
+
+#### **Backup Nodes (Emergency Failover)**
+* **Proxmox Fujitsu Lifebook**
+* **Proxmox HP ProOne**
+
+---
+
+### 2. Raspberry Pi Cluster (On-Demand Dev Environment)
+*Docker Swarm & K8s; not kept online 24/7.*
+
+* ── **Pi 1 Node**
+  * aaPanel *(Mail Server)*
+* ── **Pi 2 Node**
+  * Pi-hole Backup DNS
+  * Tailscale
+* ── **Pi 3 Node**
+  * ⚙️ General Cluster Worker Node
+
 
 ---
 
@@ -92,3 +166,7 @@ I did not write some of the Docker Compose configuration used in this project. A
 │
 └── README.md                # documentation index
 
+
+---
+### Disclaimer & Credits
+I did not write some of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is personal archive and portfolio
