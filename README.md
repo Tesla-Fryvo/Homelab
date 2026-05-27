@@ -1,6 +1,6 @@
 # 🏠 My Homelab 
 
-Welcome to my homelab repository. hardware documentation, and archive for my home server network and testing clusters. 
+Welcome to my homelab repository this is hardware documentation, and archive for my home server network.
 
 ---
 
@@ -16,22 +16,20 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 ## 🚀 Future Goals
 
 ### 🌐 Networking
-* Install a **10GB SFP+ card** in the Ryzen server for direct high-speed connections.
-* Upgrade to a new, fully managed core network switch.
-* Deploy a dedicated Mini PC running **OPNsense** or **pfSense** as the main firewall.
+* Install a **10GB SFP+ card** in Ryzen server.
+* Upgrade to a new, fully managed network switch.
+* dedicated Mini PC running **OPNsense** or **pfSense** as the main server router.
 
 ### 💻 Compute & Clustering
-* Build a **second Ryzen server node** to expand processing power.
-* Re-architect the Proxmox cluster into a robust, high-availability configuration:
+* Build a **second Ryzen server node** to expand cluster.
+* Rebuild Proxmox cluster into a better bigger cluster:
   > * Ryzen Server 1 *(Completed)*
   > * Ryzen Server 2 *(Planned)*
   > * Mini PC Node 1 *(Planned)*
   > * Mini PC Node 2 *(Planned)*
-* Transition to a dedicated physical **TrueNAS server** build.
-* Expand bare-metal KVM testing.
-* Equip the Ryzen server with a **dedicated GPU** to accelerate local **Ollama** AI workloads.
-
-
+* dedicated physical **TrueNAS server** build.
+* KVM for all node.
+* install Ryzen server with a **dedicated GPU** run **Ollama** and AI workloads.
 
 ---
 
@@ -71,14 +69,11 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 
 ## ⚙️ Service & Software i use 
 
-###  Cloud & Tunneling Services (External Connections)
+###  Cloud & Tunneling (External Connections)
 * **Playit.gg:** Premium tunneling service used for server port-forwarding without exposing home public IPs.
 * **Cloudflare:** Domain Management, Cloudflare Tunnels, Cloudflare Pages.
 * **Tailscale:** Private VPN layer used for remote access to the homelab from any outside network.
-* **GitHub / GitLab:** Source archiving.
-
-### 🐳 Application Architecture & Running Configurations
-*The main server runs Proxmox VE. All services run inside an **Ubuntu Server VM**, Docker containers and Portainer.*
+* **GitHub / GitLab:** Source , archiving.
 
 | Software / Platform | info |
 | :--- | :--- |
@@ -94,6 +89,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 
 
 ---
+## Cluster Configurations
 
 ### Network Diagram
 ```text
@@ -116,7 +112,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 
 ```
 
-## 🖥️ Hypervisor Layout & Cluster Configurations
+## 🖥️ Hypervisor Layout
 
 ### 1. Proxmox 3-Node Cluster (Main Stack - 24/7)
 
@@ -170,5 +166,5 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 ```
 
 ---
-### Disclaimer & Credits
+## Disclaimer & Credits
 I did not write some of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is personal archive and portfolio
