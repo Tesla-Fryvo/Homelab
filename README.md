@@ -102,7 +102,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 └──────────────┬───────────────┘
                │ (RJ45 Ethernet)
  ┌─────────────▼─────────────┐
- │    TP-Link TL-WR844N      │  [Core Router]
+ │    TP-Link TL-WR844N      │  [server Router]
  └─────────────┬─────────────┘
                │
  ┌─────────────▼─────────────┐
@@ -114,9 +114,11 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
    │      └───────────────► [HP ProOne Backup Node]
    └──────────────────────► [Proxmox Ryzen Main Server]
 
+```
+
 ## 🖥️ Hypervisor Layout & Cluster Configurations
 
-### 1. Proxmox 3-Node Cluster (Main Stack - 24/7 Production)
+### 1. Proxmox 3-Node Cluster (Main Stack - 24/7)
 
 #### **Proxmox Ryzen Server (`10.0.0.103`)**
 * ── **Ubuntu Server VM 100 (`10.0.0.104`)**
@@ -133,7 +135,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 * ── **TrueNAS VM 103**
   * 📦 Local NAS Storage
 
-#### **Backup Nodes (Emergency Failover)**
+#### **Backup Nodes (Emergency backup)**
 * **Proxmox Fujitsu Lifebook**
 * **Proxmox HP ProOne**
 
@@ -148,7 +150,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
   * Pi-hole Backup DNS
   * Tailscale
 * ── **Pi 3 Node**
-  * ⚙️ General Cluster Worker Node
+  * worker node
 
 
 ---
@@ -165,7 +167,7 @@ Welcome to my homelab repository. hardware documentation, and archive for my hom
 │   └── [Dockerfiles]        # Standard compose files, environment variables, and stack configurations
 │
 └── README.md                # documentation index
-
+```
 
 ---
 ### Disclaimer & Credits
