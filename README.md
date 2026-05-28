@@ -1,6 +1,6 @@
 # 🏠 My Homelab 
 
-Welcome to my homelab repository this is hardware documentation, and archive for my home server network.
+Welcome to my homelab repository this is hardware documentation for my home server.
 
 ---
 
@@ -17,8 +17,8 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 ### 🌐 Networking
 * Install a **10GB SFP+ card** in Ryzen server.
-* Upgrade to a new, fully managed network switch.
-* dedicated Mini PC running **OPNsense** or **pfSense** as the main server router.
+* Upgrade to a new managed network switch.
+* Mini PC running **OPNsense** or **pfSense** as the main server router.
 
 ### 💻 Compute & Clustering
 * Build a **second Ryzen server node** to expand cluster.
@@ -30,6 +30,7 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 * dedicated physical **TrueNAS server** build.
 * KVM for all node.
 * install Ryzen server with a **dedicated GPU** run **Ollama** and AI workloads.
+* install ups 
 
 ---
 
@@ -89,7 +90,7 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 
 ---
-## Cluster Configurations
+## Cluster Layout
 
 ### Network Diagram
 ```text
@@ -112,7 +113,7 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 ```
 
-## 🖥️ Hypervisor Layout
+## 🖥️ Hypervisor VM Layout
 
 ### 1. Proxmox 3-Node Cluster (Main Stack - 24/7)
 
@@ -137,7 +138,7 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 ---
 
-### 2. Raspberry Pi Cluster (On-Demand Dev Environment)
+### 2. Raspberry Pi Cluster (for testing)
 *Docker Swarm & K8s; not kept online 24/7.*
 
 * ── **Pi 1 Node**
@@ -167,4 +168,4 @@ Welcome to my homelab repository this is hardware documentation, and archive for
 
 ---
 ## Disclaimer & Credits
-I did not write some of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is personal archive and portfolio
+I did not write most of the Docker Compose configuration used in this project. All credits for the setup and original code go entirely to the original creator. This repository is archive and portfolio
