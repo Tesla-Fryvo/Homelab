@@ -4,7 +4,7 @@ Welcome to my homelab repository this is hardware documentation for my home serv
 
 ---
 
-## 📅 Project Timeline
+## Project Timeline
 
 | Date | Phase | info |
 | :--- | :--- | :--- |
@@ -13,9 +13,9 @@ Welcome to my homelab repository this is hardware documentation for my home serv
 | **Apr 09, 2026** | Main Setup | All hardware arrived. Started building main server and secondary nodes. |
 | **May 26, 2026** | Documentation | Current Phase. mapping out the repository documentation. |
 
-## 🚀 Future Goals
+## Future Goals
 
-### 🌐 Networking
+### Networking
 * Install a **10GB SFP+ card** in Ryzen server.
 * Upgrade to a new managed network switch.
 * Mini PC running **OPNsense** or **pfSense** as the main server router.
@@ -68,7 +68,7 @@ Welcome to my homelab repository this is hardware documentation for my home serv
 
 ---
 
-## ⚙️ Service & Software i use 
+## Service & Software i use 
 
 ###  Cloud & Tunneling (External Connections)
 * **Playit.gg:** Premium tunneling service used for server port-forwarding.
@@ -113,7 +113,7 @@ Welcome to my homelab repository this is hardware documentation for my home serv
 
 ```
 
-## 🖥️ Hypervisor VM Layout
+## Hypervisor VM Layout
 
 ### 1. Proxmox 3-Node Cluster (Main Stack - 24/7)
 
